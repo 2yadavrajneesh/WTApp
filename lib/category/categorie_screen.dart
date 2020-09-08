@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import './data.dart';
-import './category_item.dart';
+import '../data.dart';
+import 'category_item.dart';
 
 class Categories extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         title: const Text('WTEDU'),
       ),
@@ -14,7 +15,7 @@ class Categories extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.all(25),
-          children: DUMMY_CATEGORIES.map((catData) => CategoryItem(catData.id, catData.title, catData.color,),).toList(),
+          children: CATEGORIES.map((catData) => CategoryItem(catData.id, catData.title, catData.color,),).toList(),
         ),
       ),
     );

@@ -1,6 +1,8 @@
+import 'package:WTApp/course/course_item.dart';
 import 'package:flutter/material.dart';
+import '../data.dart';
 
-class CategoryMealsScreen extends StatelessWidget {
+class CategoryScreen extends StatelessWidget {
   static const routeName = '/category-item';
 
   // final String categoryId;
@@ -12,22 +14,19 @@ class CategoryMealsScreen extends StatelessWidget {
     final routeArgs = ModalRoute.of(context).settings.arguments as Map<String, String>;
     final categoryTitle = routeArgs['title'];
     final categoryId = routeArgs['id'];
+    final categoryColor = routeArgs['color'];
+    final categoryCourse = COURSE.where((course) {return course.categories.contains(categoryId);}).toList();
 
     return Scaffold(
       appBar: AppBar(title: Text(categoryTitle),),
-      body: Center(
-        child: Text('Happy Learning!',),
-      ),
+      body: ListView.builder(itemBuilder: (ctx, index) {
+        return CourseItem(
+          title: categoryCourse[index].title,
+          color: categoryCourse[index].color,
+        );
+        }, itemCount: categoryCourse.length,)
     );
   }
 }
 
-// GridView(
-// padding: const EdgeInsets.all(25),
-// children: DUMMY_CATEGORIES.map((catData) => CategoryItem(catData.id, catData.title, catData.color,),).toList(),
-// gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-// maxCrossAxisExtent: 200,
-// childAspectRatio: 3 / 2,
-// crossAxisSpacing: 20,
-// mainAxisSpacing: 20,
-// ),
+//

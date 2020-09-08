@@ -1,7 +1,8 @@
+import 'package:WTApp/course/course_screen.dart';
 import 'package:flutter/material.dart';
-
-import './category_screen.dart';
-import './categories.dart';
+import 'category/categorie_screen.dart';
+import 'course/course_screen.dart';
+import 'tutorial/tutorial_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -32,7 +33,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/', // default is '/'
       routes: {
         '/': (ctx) => Categories(),
-        CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
+        CategoryScreen.routeName: (ctx) => CategoryScreen(),
+        CourseScreen.routeName: (ctx) => CourseScreen(),
       },
     );
   }
