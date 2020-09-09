@@ -12,3 +12,7 @@ You must to download the Android Studio and Flutter SDK, here we are using Intel
 - After successfully installation of all required software and plugins you have clone this project and open this project on whichever IDE you use.
 
 ### Screenshot of App
+
+![WTApp](screenshot/main.PNG "WtApp Home Page")
+
+![WTApp](screenshot/main2.PNG "WtApp Option Page")
